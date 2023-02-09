@@ -45,7 +45,7 @@ case $input in
     [yY][eE][sS]|[yY])
 		echo "Installing clickhouse..."
     # deploy clickhouse
-    docker run -d --name clickhouse -p 8123:8123 -p 9000:9000 -p 9009:9009 --ulimit nofile=262144:262144 -v $(pwd)/init/clickhouse/quickstart:/docker-entrypoint-initdb.d yandex/clickhouse-server
+    docker run -d --name clickhouse -p 8123:8123 -p 9000:9000 -p 9009:9009 --ulimit nofile=262144:262144 -v $(pwd)/init/clickhouse/quickstart:/docker-entrypoint-initdb.d clickhouse/clickhouse-server
     ;;
     [nN][oO]|[nN])
 		echo "Skip clickhouse install, please check conf/api.json clickhouse config."
